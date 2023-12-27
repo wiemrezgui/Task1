@@ -1,11 +1,32 @@
 <div class="content">
-    <div class="inputs">
-    <form >
-    <input type="text" name="nom_prenom" placeholder="Nom et Prenom">
-    <input type="email" name="mail" placeholder="Adresse Email">
-    <textarea name="message" placeholder="Votre message ici..." cols="30" rows="8"></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
+  <div class="inputs">
+    <form [formGroup]="contactForm">
+      <div class="form-group">
+        <input type="text" name="Name" placeholder="Nom et Prenom" formControlName="Name">
+        <div class="text-dark"
+          *ngIf="contactForm.controls['Name'].invalid &&(contactForm.controls['Name'].dirty ||contactForm.controls['Name'].touched)">
+          <div *ngIf="contactForm.controls['Name'].errors?.['email']">Email Invalide</div>
+          <div *ngIf="contactForm.controls['Name'].errors?.['required']">Obligatoire</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Email" formControlName="email">
+        <div class="text-dark"
+          *ngIf="contactForm.controls['email'].invalid &&(contactForm.controls['email'].dirty ||contactForm.controls['email'].touched)">
+          <div *ngIf="contactForm.controls['email'].errors?.['email']">Email Invalide</div>
+          <div *ngIf="contactForm.controls['email'].errors?.['required']">Obligatoire</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea name="message" placeholder="Votre message ici..." cols="30" rows="8"
+          formControlName="message"></textarea>
+        <div class="text-dark"
+          *ngIf="contactForm.controls['message'].invalid &&(contactForm.controls['message'].dirty ||contactForm.controls['message'].touched)">
+          <div *ngIf="contactForm.controls['message'].errors?.['required']">Obligatoire</div>
+        </div>
+      </div>
+      <button type="submit">Envoyer</button>
+    </form>
   </div>
   <div class="content_image">
     <img [src]="imagesrc" alt="contact">

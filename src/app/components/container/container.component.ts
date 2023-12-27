@@ -11,9 +11,7 @@ subtitle:string="Chili's Tunisie"
 title:string="Découvrez les meilleures recettes syriennes"
 text:string="Voir notre menu"
 imagesrc:string="assets/images/plat2.png"
-constructor(private router:Router){}
+constructor(){}
 ngOnInit():void{}
-navigateToMenu() {
-  this.router.navigate(['/menu']);
-}
+
 }

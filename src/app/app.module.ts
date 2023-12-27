@@ -9,7 +9,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MenucardsComponent } from './components/menucards/menucards.component';
 import { ContainerComponent } from './components/container/container.component';
 import { ContactContentComponent } from './components/contact-content/contact-content.component';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
