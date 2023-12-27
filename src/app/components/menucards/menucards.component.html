@@ -1,0 +1,14 @@
+<div class="menu">
+    <h3>Nos Fajitas</h3>
+    <div class="cards">
+    <div class="card" *ngFor="let menuItem of menuItems">
+        <img [src]="menuItem.image" class="card-img-top" alt="plat">
+        <div class="card-body">
+          <h5 class="card-title">{{ menuItem.title }}</h5>
+          <p class="card-text">{{ menuItem.price }}</p>
+        </div>
+    </div>
+
+  </div>
+  <div class="link">Voir Plus</div>
+</div> 
